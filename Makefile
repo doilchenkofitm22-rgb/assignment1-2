@@ -1,5 +1,4 @@
-
-.PHONY: init run semgrep bandit audit zap up down docker-build
+ .PHONY: init run semgrep bandit audit zap up down docker-build
 
 init:
 	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -23,4 +22,5 @@ down:
 	docker-compose down
 
 zap:
-	mkdir -p reports/zap && docker run --rm -v $$PWD/reports/zap:/zap/wrk 		owasp/zap2docker-stable zap-baseline.py -t http://host.docker.internal:5000 -r zap.html -x zap.xml || true
+	mkdir -p reports/zap && docker run --rm -v $$PWD/reports/zap:/zap/wrk \
+		owasp/zap2docker-stable zap-baseline.py -t http://host.docker.internal:5000 -r zap.html -x zap.xml || true

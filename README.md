@@ -1,4 +1,3 @@
-
 # SDLC Security Demo Project (Flask)
 
 Навчальний демонстраційний проєкт для практичної роботи **«Інтеграція безпеки в SDLC»**.
@@ -25,9 +24,6 @@ flask run  # або: python src/app.py
 - `.github/workflows/` — CI з **SAST** (Semgrep, Bandit, pip-audit) і **DAST** (OWASP ZAP baseline).
 - `Dockerfile`, `docker-compose.yml` — контейнеризація.
 - `Makefile` — корисні команди.
-
-## Завдання студентів
-Див. файл [`tasks.md`](tasks.md) — покроково для виконання і критерії оцінювання.
 
 ## Зауваження
 Код містить **навмисні вразливості** (SQLi, XSS, слабка автентифікація, секрети у змінних оточення). Використовуйте лише в навчальних цілях.
