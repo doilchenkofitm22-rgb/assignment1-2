@@ -1,0 +1,25 @@
+ <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Пошук</title>
+  </head>
+  <body>
+    <h1>Пошук</h1>
+    <form method="get">
+      <input name="q" placeholder="Запит" value="{{ q }}">
+      <button type="submit">Шукати</button>
+    </form>
+    <p>SQL запит: {{ sql }}</p>
+    {% if rows %}
+      <ul>
+      {% for row in rows %}
+        <li><strong>{{ row['title'] }}</strong>: {{ row['body'] }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>Нічого не знайдено.</p>
+    {% endif %}
+    <p><a href="/">На головну</a></p>
+  </body>
+</html>
